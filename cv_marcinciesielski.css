@@ -20,7 +20,7 @@ body {
   flex-direction: column;
   background-color: #00589B;
   color: #fff;
-  padding: 0 1em;
+  padding: 0 0 0 16px;
 }
 
 .Name h1 {
@@ -32,7 +32,7 @@ body {
   align-items: center;
   background-color: #00589B;
   color: #fff;
-  padding: 0 16px;
+  padding: 0 0 0 16px;
   font-family: Calibri, Helvetica, sans-serif;
   font-size: 3.5em;
 }
@@ -169,15 +169,23 @@ h2.subdiv {
       "Contact";
       padding: 0 20px;
   }
+
+  .box {
+    padding: 10px;
+  }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   .container {
     padding: 0;
   }
 
+  .Name, .Vitae {
+    padding: 0 8px;
+  }
+
   .box {
-    padding: 10px;
+    padding: 8px;
   }
 
   .Contact, .Profile {
