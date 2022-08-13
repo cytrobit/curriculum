@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+:root {
+    --bgBlue: #00589B;
+    --bgGray: #e9e9e9;
+    --mainMargin: 16px;
+    --smallMargin: 8px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,83 +21,11 @@ body {
   overflow-x: hidden;
 }
 
-.Name {
-  display: flex;
-  align-items:flex-start;
-  justify-content:center;
-  flex-direction: column;
-  background-color: #00589B;
-  color: #fff;
-  padding: 0 0 0 16px;
-}
-
-.Name h1 {
-  text-transform: uppercase;
-}
-
-.Vitae {
-  display: flex;
-  align-items: center;
-  background-color: #00589B;
-  color: #fff;
-  padding: 0 0 0 16px;
-  font-family: Calibri, Helvetica, sans-serif;
-  font-size: 3.5em;
-}
-
-.Contact ul {
-  color: #fff;
-  list-style-type: none;
-}
-
-.Contact ul li {
-  font-size: 1em;
-  line-height: 2;
-}
-
-.Contact ul li i {
-  padding-right: 1em;
-}
-
-.fa-phone {
-  color: #15b100;
-}
-
-.fa-globe {
-  color: #00589B;
-}
-
-.fa-instagram {
-  color: #8a3ab9;
-}
-
-.Contact ul li a {
-  color: #000000;
-  text-decoration: none;
-  outline: none;
-  transition: 0.4s;
-}
-
-.Contact ul li a:hover {
-  text-shadow: 0 0 2px #000000;
-}
-
-.Contact .schools li  {
-  font-size: 1em;
-  color: #000000;
-  line-height: 1.5;
-  padding: 0.2em 0;
-}
-
-.Contact .schools .bolder {
-  font-weight: 600;
-}
-
 .container {
   background-color: #fff;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 110px auto auto;
+  grid-template-rows: auto auto auto;
   grid-auto-rows: 1fr;
   gap: 1em 1em;
   grid-auto-flow: row;
@@ -99,17 +34,36 @@ body {
     "Contact Profile"
     "Contact Projects";
     padding: 0 100px;
-    margin-top: -1em;
-    /* margin-top: -1em removes grid-gap on the top of css grid container */
+/*    margin-top: -1em;*/
+/* margin-top: -1em removes grid-gap on the top of css grid container */
 }
 
-.box {
-  padding: 1em;
+.Name, .Vitae {
+  display: flex;
+  align-items:flex-start;
+  justify-content:center;
+  flex-direction: column;
+  background-color: var(--bgBlue);
+  color: #fff;
+  padding: var(--mainMargin);
+}
+
+.Name h1 {
+  text-transform: uppercase;
+}
+
+.Vitae {
+  font-family: Calibri, Helvetica, sans-serif;
+  font-size: 3.5em;
+}
+
+section {
+  padding: var(--mainMargin);
+  background-color: var(--bgGray);
 }
 
 .Contact {
   grid-area: Contact;
-  background-color: #e9e9e9;
 }
 
 h2.subdiv {
@@ -131,13 +85,63 @@ h2.subdiv {
 }
 
 .Contact .small {
+/*  font-size: 1em;*/
+  line-height: 1.5;
+}
+
+.Contact ul {
+  list-style-type: none;
+}
+
+.Contact ul li {
   font-size: 1em;
-  line-height: 1.4;
+  line-height: 2;
+}
+
+.Contact ul li i {
+  padding-right: var(--mainMargin);
+}
+
+.Contact ul li a {
+  color: #000000;
+  text-decoration: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.Contact ul li a:hover {
+  text-shadow: 0 0 2px #000000;
+}
+
+ul.ctx {
+    padding-top: var(--smallMargin);
+}
+
+.Contact .schools li  {
+  font-size: 1em;
+  color: #000000;
+  line-height: 1.5;
+  padding: 0.2em 0;
+}
+
+.bolder {
+  font-weight: 600;
+}
+
+.fa-phone {
+  color: #15b100;
+}
+
+.fa-globe {
+  color: #00589B;
+}
+
+.fa-instagram {
+  color: #8a3ab9;
 }
 
 .Profile {
   grid-area: Profile;
-  background-color: #e6e6e6;
 }
 
 .Profile p {
@@ -145,13 +149,16 @@ h2.subdiv {
 }
 
 .Projects {
-  padding: 1em;
+/*  padding: 1em;*/
   grid-area: Projects;
-  background-color: #e2e2e2;
 }
 
 .Projects ul {
-  padding: 0.5em 2em;
+  padding: 0.5em 0 1em 1em;
+}
+
+.Projects ul li {
+  padding-bottom: var(--smallMargin);
 }
 
 /* MEDIA QUERIES */
@@ -168,12 +175,8 @@ h2.subdiv {
       "Profile"
       "Projects"
       "Contact";
-      padding: 0 20px;
   }
 
-  .box {
-    padding: 10px;
-  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -182,28 +185,26 @@ h2.subdiv {
   }
 
   .Name, .Vitae {
-    padding: 0 8px;
-  }
-
-  .box {
-    padding: 8px;
-  }
-
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction: column;
+  background-color: var(--bgBlue);
+  color: #fff;
+}
+    
   .Contact, .Profile {
     text-align: justify;
   }
 
-  .Name {
-    padding: 0 0 0 1em;
-  }
-
   .Vitae {
-    height: 100%;
     font-size: 1.5em;
-    padding: 2px 0 4px 16px;
-    /* margin-top: -1em; */
     font-family: 'Lato', sans-serif;
   }
+    
+    .Vitae p {
+        padding: 4px 0;
+    }
 
   .Contact .infobox {
     font-size: 1em;
@@ -211,7 +212,7 @@ h2.subdiv {
   }
 
   .Projects ul {
-    padding: 0.5em 1em;
+    padding: 0.5em 0;
   }
 
   .Projects ul li p {
