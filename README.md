@@ -10,6 +10,6 @@ HTML, CSS, JavaScript, React, Git, GitHub, RWD, Bootstrap, Tailwind, Npm, Chrome
 
 I learn Next.js and Three.js, I also made one app in Angular + TypeScript for my postgraduate diploma.
 
-English - C1
+English - B2
 
 My [homepage](https://www.lunaweb.pl/)
